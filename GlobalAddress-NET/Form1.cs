@@ -46,8 +46,12 @@ namespace GlobalAddress_NET
                 Options += "OutputGeo:" + optOutputGeocode.Text + ",";
 
             // Set the country of origin option
-            if (!string.IsNullOrEmpty(optCountryOfOrigin.SelectedText))
+            if (!string.IsNullOrEmpty(optCountryOfOrigin.Text))
                 Options += "CountryOfOrigin:" + optCountryOfOrigin.Text + ",";
+
+            // Set the USExtras option
+            if (!string.IsNullOrEmpty(optUSExtras.Text))
+                Options += "USExtras:" + optUSExtras.Text + ",";
 
             // Set Options
             if (Options.Length > 0)
@@ -76,6 +80,8 @@ namespace GlobalAddress_NET
             RESTRequest += @"&subnatarea=" + Uri.EscapeDataString(txtSubnatareaIn.Text);
             RESTRequest += @"&postal=" + Uri.EscapeDataString(txtPostalCodeIn.Text);
             RESTRequest += @"&ctry=" + Uri.EscapeDataString(txtCountryIn.Text);
+
+            RESTRequest += @"&lastname=" + Uri.EscapeDataString(txtLastNameIn.Text);
 
             // Set JSON Response Protocol
             RESTRequest += @"&format=json";
@@ -142,6 +148,7 @@ namespace GlobalAddress_NET
             txtSubnatareaIn.Text = "";
             txtPostalCodeIn.Text = "";
             txtCountryIn.Text = "";
+            txtLastNameIn.Text = "";
 
             // Reset options to defaults
             optDeliveryLines.Text = string.Empty;
@@ -149,6 +156,7 @@ namespace GlobalAddress_NET
             optOutputScript.Text = string.Empty;
             optOutputGeocode.Text = string.Empty;
             optCountryOfOrigin.Text = string.Empty;
+            optUSExtras.Text = string.Empty;
 
             // Clear the output
             txtResponse.Text = string.Empty;
