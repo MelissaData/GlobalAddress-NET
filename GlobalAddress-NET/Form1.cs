@@ -81,7 +81,7 @@ namespace GlobalAddress_NET
             RESTRequest += @"&postal=" + Uri.EscapeDataString(txtPostalCodeIn.Text);
             RESTRequest += @"&ctry=" + Uri.EscapeDataString(txtCountryIn.Text);
 
-            RESTRequest += @"&lastname=" + Uri.EscapeDataString(txtLastNameIn.Text);
+            RESTRequest += @"&last=" + Uri.EscapeDataString(txtLastNameIn.Text);
 
             // Set JSON Response Protocol
             RESTRequest += @"&format=json";

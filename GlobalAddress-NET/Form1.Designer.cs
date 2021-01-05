@@ -110,6 +110,7 @@
             // 
             // tabInput
             // 
+            this.tabInput.AutoScroll = true;
             this.tabInput.BackColor = System.Drawing.Color.CornflowerBlue;
             this.tabInput.Controls.Add(this.txtLastNameIn);
             this.tabInput.Controls.Add(this.label26);
